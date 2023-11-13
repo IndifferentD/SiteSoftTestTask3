@@ -16,8 +16,9 @@ services:
     parser:
         container_name: "habr_parser"
         build: ./parser
+        depends_on:
+          - database
 
 volumes:
     postgres-db-data:
         driver: local
-    
