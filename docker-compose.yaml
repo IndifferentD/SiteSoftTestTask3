@@ -1,0 +1,23 @@
+services:
+    database:
+        hostname: parser_db
+        container_name: "habr_parser_database"
+        environment:
+                PGDATA: /var/lib/postgresql/data/pgdata
+                POSTGRES_USER: parser
+                POSTGRES_DB: habr
+                POSTGRES_HOST_AUTH_METHOD: trust
+        image: "postgres:16"
+        ports:
+          - "5435:5432"
+        volumes:
+          - postgres-db-data:/var/lib/postgresql/data/pgdata
+        restart: always
+    parser:
+        container_name: "habr_parser"
+        build: ./parser
+
+volumes:
+    postgres-db-data:
+        driver: local
+    
