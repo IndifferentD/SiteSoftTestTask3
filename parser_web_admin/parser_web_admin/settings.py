@@ -76,10 +76,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'habr',
         'USER': 'parser',
-        # 'HOST': 'parser_db',
-        # 'PORT': '5432',
-        'HOST': '192.168.180.147',
-        'PORT': '5435'
+        'HOST': 'parser_db',
+        'PORT': '5432',
+        # 'HOST': '192.168.180.147',
+        # 'PORT': '5435'
     }
 }
 
