@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-xgdpwg+de7(0oti&_yz)9lsx)e(ji!twbm1ehgu!*g4_8^#!!m
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -70,7 +68,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'parser_web_admin.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -78,14 +75,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'habr',
-        'USER':'parser',
-        'HOST': 'parser_db',
-        'PORT': '5432',
-        # 'HOST':'192.168.180.147',
-        # 'PORT':'5435'
+        'USER': 'parser',
+        # 'HOST': 'parser_db',
+        # 'PORT': '5432',
+        'HOST': '192.168.180.147',
+        'PORT': '5435'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -116,6 +112,12 @@ LOGGING = {
     'root': {
         'handlers': ['console'],
         'level': 'ERROR',
+    },
+    'loggers': {
+        'django.server': {
+            'handlers': ['console'],
+            'level': 'ERROR'
+        },
     }
 }
 
@@ -129,7 +131,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

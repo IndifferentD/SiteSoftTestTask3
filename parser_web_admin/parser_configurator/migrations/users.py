@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 def create_admin(apps, schema_editor):
     # Check if the superuser already exists
-    if not User.objects.filter(username='admin').exists():
+    if not User.objects.filter(username='1').exists():
         # Create a new superuser
         User.objects.create_superuser('1', '', '1')
         print('Superuser "admin" created successfully.')
