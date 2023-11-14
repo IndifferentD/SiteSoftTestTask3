@@ -1,5 +1,6 @@
 # Парсер хабов с habr.com
 
+---
 Написать парсер любого хаба с habr.com на выбор. Условия:
 1) Раз в 10 минут делать запрос на главную страницу хаба.
 2) Взять с главной страницы хаба ссылки на статьи.
@@ -17,29 +18,22 @@
 
 ✅ Сделать парсер асинхронным, используя библиотеку aiohttp, например, 5 параллельных запросов.
 
-❌ Добавить админку на Django для отображения хабов и управления ими (добавить хаб/удалить хаб/указать период обхода хаба).
+✅ Добавить админку на Django для отображения хабов и управления ими (добавить хаб/удалить хаб/указать период обхода хаба).
 
 ✅ Упаковать всё в Docker образ.
 
+---
 Для запуска:
     
     git clone https://github.com/IndifferentD/SiteSoftTestTask3.git
     cd SiteSoftTestTask3
     docker compose up
 
+Админка по адресу
 
-Максимальное количество параллельных запросов и интервал парсинга задан в main.py
+http://localhost:8000/admin
 
-    PARALLEL_REQUESTS = 5
-    PARSE_INTERVAL = 600
+login: 1
 
-
-Список хабов для парсинга задан в виде сета ссылок в database/init.py
-
-    hub_urls_to_parse = {
-        'https://habr.com/ru/hubs/popular_science/articles/',
-        'https://habr.com/ru/hubs/programming/articles/',
-        'https://habr.com/ru/hubs/open_source/articles/',
-        'https://habr.com/ru/hubs/maths/articles/'
-    }
+password: 1
 

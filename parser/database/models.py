@@ -1,4 +1,4 @@
-from peewee import Model, CharField, DateTimeField,  AutoField,  TextField,  ForeignKeyField
+from peewee import Model, CharField, DateTimeField, AutoField, TextField, ForeignKeyField, IntegerField
 from database.handler import database_handler
 
 
@@ -11,6 +11,7 @@ class Hub(BaseModel):
     id: int = AutoField(primary_key=True, null=False)
     hub_name: str = CharField(null=False)
     hub_url: str = CharField(null=False)
+    poll_interval: int = IntegerField(null=False,default=600)
 
     class Meta:
         table_name = 'hubs'

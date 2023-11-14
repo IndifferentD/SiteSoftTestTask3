@@ -18,6 +18,14 @@ services:
         build: ./parser
         depends_on:
           - database
+    parser_web_admin:
+        hostname: parser_web_admin
+        container_name: "parser_web_admin"
+        build: ./parser_web_admin
+        depends_on:
+          - parser
+        ports:
+          - "8000:8000"
 
 volumes:
     postgres-db-data:
